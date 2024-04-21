@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 02:48:30 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/17 19:46:54 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 06:27:17 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

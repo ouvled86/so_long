@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:51:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 19:55:55 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:09:32 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	main(int argc, char **argv)
 	char	**map;
 
 	map_path = extract_path(argv[1]);
-	map = read_map(map_path);
+	if (map_path)
+		map = read_map(map_path);
 	for (int j = 0; j < 5; j++)
 		printf("%s", map[j]);
 }

@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:08:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/04 17:45:40 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/14 00:21:07 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

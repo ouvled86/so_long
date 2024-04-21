@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:35:46 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/04 17:45:40 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/15 00:52:07 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	ft_check(char const *str, int c)
 {

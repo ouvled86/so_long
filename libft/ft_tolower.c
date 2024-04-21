@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:37:38 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/04 17:45:40 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:34:52 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

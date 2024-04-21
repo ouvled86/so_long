@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:35:57 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/15 20:58:02 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/08 20:07:13 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

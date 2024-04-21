@@ -6,42 +6,32 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:12:59 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/16 18:50:06 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2023/11/14 00:13:32 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-static int	check(char **str, char c)
+static int	check(char const *str, char c)
 {
 	int	occurances;
 	int	i;
-	int	j;
 
 	occurances = 0;
-	j = 1;
-	while (str[j])
+	i = 0;
+	while (str[i])
 	{
-		i = 0;
-		while (str[j][i])
-		{
-			if (ft_isdigit_signed(str[j][i]))
-				occurances++;
-			else
-				err_func(NULL, NULL);
-			while (ft_isdigit_signed(str[j][i]))
-				i++;
-			if (str[j][i] == c)
-				i++;
-			if (!(ft_isdigit_signed(str[j][i])) && str[j][i])
-				err_func(NULL, NULL);
-		}
-		j++;
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
+			occurances++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
 	return (occurances);
 }
 
-char	**freemem(char **res)
+static char	**freemem(char **res)
 {
 	int	i;
 
@@ -55,7 +45,7 @@ char	**freemem(char **res)
 	return (NULL);
 }
 
-static char	*extract(int *i, char *s, char c)
+static char	*extract(int *i, char const *s, char c)
 {
 	int		ressize;
 	int		tpos;
@@ -78,47 +68,30 @@ static char	*extract(int *i, char *s, char c)
 		j++;
 	}
 	res[j] = '\0';
-	while (s[*i] && s[*i] == c)
-		(*i)++;
 	return (res);
 }
 
-void	extract_all(int *i, int k, char **s, char **r)
+char	**ft_split(char const *s, char c)
 {
-	static int	j;
-	int			occs;
-
-	occs = check(s, ' ');
-	while (j < occs && s[k][*i])
-	{
-		r[j] = extract(i, s[k], ' ');
-		if (r[j] == NULL)
-			r = freemem(r);
-		j++;
-	}
-}
-
-char	**ft_split(char **s, char c)
-{
-	int		occurances;
-	char	**result;
 	int		i;
 	int		j;
-	int		k;
+	int		occurances;
+	char	**result;
 
 	j = 0;
-	k = 1;
-	if (!s || !*s)
+	if (!s)
 		return (NULL);
 	occurances = check(s, c);
 	result = (char **)malloc ((occurances + 1) * sizeof (char *));
 	if (!result)
 		return (NULL);
-	while (s[k])
+	i = 0;
+	while (j < occurances)
 	{
-		i = 0;
-		extract_all(&i, k, s, result);
-		k++;
+		result[j] = extract(&i, s, c);
+		if (result[j] == NULL)
+			return (freemem(result));
+		j++;
 	}
 	result[occurances] = NULL;
 	return (result);
