@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 01:42:40 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:51:11 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static bool	uniq_p_e(char **map)
 	return (true);
 }
 
-static int	set_c_count(char **map)
+int	set_c_count(char **map)
 {
 	int	i;
 	int	j;
@@ -62,16 +62,15 @@ static int	set_c_count(char **map)
 	return (c);
 }
 
-static t_pos	*set_p_pos(char **map)
+static t_pos	set_p_pos(char **map)
 {
 	int		i;
 	int		j;
-	t_pos	*p_pos;
+	t_pos	p_pos;
 
 	i = 0;
-	p_pos = (t_pos *)malloc(sizeof(t_pos *));
-	if (!p_pos)
-		return (NULL);
+	// if (!p_pos)
+	// 	return (NULL);
 	while (map[i])
 	{
 		j = 0;
@@ -79,24 +78,23 @@ static t_pos	*set_p_pos(char **map)
 			j++;
 		if (map[i][j] == 'P')
 		{
-			p_pos->x = j;
-			p_pos->y = i;
+			p_pos.x = j;
+			p_pos.y = i;
 		}
 		i++;
 	}
 	return (p_pos);
 }
 
-static t_pos	*set_e_pos(char **map)
+static t_pos	set_e_pos(char **map)
 {
 	int		i;
 	int		j;
-	t_pos	*e_pos;
+	t_pos	e_pos;
 
 	i = 0;
-	e_pos = (t_pos *)malloc(sizeof(t_pos *));
-	if (!e_pos)
-		return (NULL);
+	// if (!e_pos)
+	// 	return (NULL);
 	while (map[i])
 	{
 		j = 0;
@@ -104,8 +102,8 @@ static t_pos	*set_e_pos(char **map)
 			j++;
 		if (map[i][j] == 'E')
 		{
-			e_pos->x = j;
-			e_pos->y = i;
+			e_pos.x = j;
+			e_pos.y = i;
 		}
 		i++;
 	}
@@ -124,9 +122,13 @@ t_assets	*assets_ini(char **map, char *map_path)
 		err_func("Player or exit is not unique", assets, map, map_path);
 	if (set_c_count(map) < 1)
 		err_func("Map does not have any collectibles", assets, map, map_path);
+	// if (!is_accessible(map_path))
+	// 	err_func("Map is invalid", assets, map, map_path);
 	assets->map = map;
 	assets->player = set_p_pos(map);
 	assets->exit = set_e_pos(map);
+	assets->size.x = ft_strlen(map[0]) - 1;
+	assets->size.y = lines_count(map_path);
 	assets->collectibles = set_c_count(map);
 	return (assets);
 }

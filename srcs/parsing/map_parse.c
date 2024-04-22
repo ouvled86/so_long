@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 01:41:15 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:55:46 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	lines_count(char *map_path)
 	while (s)
 	{
 		c++;
+		free (s);
 		s = get_next_line(fd);
 	}
 	close (fd);
@@ -70,4 +71,50 @@ char	**read_map(char *map_path)
 	map[lines] = NULL;
 	close (fd);
 	return (map);
+}
+
+void	flood_fill(char **map, t_pos size, int x, int y)
+{
+	char	**ffd;
+
+	ffd = map;
+	if (!ffd[y][x] || ffd[y][x] == '\n')
+		return ;
+	if (ffd[y][x] == '1' || ffd[y][x] == 'F' 
+		|| x >= size.x || y >= size.y || x < 0 || y < 0)
+		return ;
+	ffd[y][x] = 'F';
+	flood_fill(ffd, size, x + 1, y);
+	flood_fill(ffd, size, x - 1, y);
+	flood_fill(ffd, size, x, y + 1);
+	flood_fill(ffd, size, x, y - 1);
+}
+
+bool	is_accessible(char *map_path)
+{
+	t_assets	*cl_a;
+	int			c;
+	int			e;
+	int			i;
+	int			j;
+
+	cl_a = assets_ini(read_map(map_path), map_path);
+	flood_fill(cl_a->map, cl_a->size, cl_a->player.x, cl_a->player.y);
+	c = set_c_count(cl_a->map);
+	e = 0;
+	i = 0;
+	while (cl_a->map[i])
+	{
+		j = 0;
+		while (cl_a->map[i][j])
+		{
+			if (cl_a->map[i][j] == 'E')
+				e++;
+			j++;
+		}
+		i++;
+	}
+	if (c != 0 || e != 0)
+		return (false);
+	return (true);
 }
