@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:12:59 by ouel-bou          #+#    #+#             */
-/*   Updated: 2023/11/14 00:13:32 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:13:13 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	check(char const *str, char c)
 	return (occurances);
 }
 
-static char	**freemem(char **res)
+char	**freemem(char **res)
 {
 	int	i;
 

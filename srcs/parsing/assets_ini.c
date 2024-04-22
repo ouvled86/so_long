@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 23:28:58 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:42:40 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,14 @@ t_assets	*assets_ini(char **map, char *map_path)
 {
 	t_assets	*assets;
 
+	is_valid(map, map_path);
 	assets = (t_assets *)malloc(sizeof(t_assets));
-	if (!map || !uniq_p_e(map) || set_c_count(map) < 1)
+	if (!assets)
 		return (NULL);
-	if (!is_valid(map, map_path))
-		return (NULL);
+	if (!uniq_p_e(map))
+		err_func("Player or exit is not unique", assets, map, map_path);
+	if (set_c_count(map) < 1)
+		err_func("Map does not have any collectibles", assets, map, map_path);
 	assets->map = map;
 	assets->player = set_p_pos(map);
 	assets->exit = set_e_pos(map);

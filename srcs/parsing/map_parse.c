@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 22:14:05 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:41:15 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**read_map(char *map_path)
 	{
 		map[i] = get_next_line(fd);
 		if (!map[i])
-			return (NULL); // Error function required!
+			err_func("Memory issue", NULL, map, map_path);
 		i++;
 	}
 	map[lines] = NULL;

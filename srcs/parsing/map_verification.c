@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:52:59 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 23:56:00 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:55:20 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,34 @@ static bool	is_enclosed(char **map, char *map_path)
 	return (true);
 }
 
+static bool	is_wrong(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'P' 
+				&& map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != '\n')
+				return (true);
+			j++;
+		}
+		i++;
+	}
+	return (false);
+}
+
 bool	is_valid(char **map, char *map_path)
 {
-	if (is_rectangular(map, map_path) && is_enclosed(map, map_path))
-		return (true);
-	return (false);
+	if (!is_rectangular(map, map_path))
+		err_func("Map is not rectangular", NULL, map, map_path);
+	if (!is_enclosed(map, map_path))
+		err_func("Map is not enclosed", NULL, map, map_path);
+	if (is_wrong(map))
+		err_func("Map keys are wrong", NULL, map, map_path);
+	return (true);
 }

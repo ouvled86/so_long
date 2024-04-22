@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:43:12 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 23:31:21 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:32:01 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ char		**read_map(char *map_path);
 bool		is_valid(char **map, char *map_path);
 
 t_assets	*assets_ini(char **map, char *map_path);
+
+void		err_func(char *display_msg, t_assets *a, char **map, char *mp);
 
 #endif
