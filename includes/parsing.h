@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:43:12 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 22:42:27 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:50:12 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ typedef struct s_assets
 	t_pos	exit;
 }			t_assets;
 
-int			lines_count(char *map_path);
 char		**read_map(char *map_path);
+int			lines_count(char *map_path);
 bool		is_accessible(char *map_path);
-
 
 bool		is_valid(char **map, char *map_path);
 
 t_assets	*assets_ini(char **map, char *map_path);
 int			set_c_count(char **map);
 
+char		*extract_path(char *path);
 void		err_func(char *display_msg, t_assets *a, char **map, char *mp);
 
 #endif
