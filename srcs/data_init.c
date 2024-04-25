@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:51:20 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/25 20:55:22 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/25 22:14:16 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ t_textures	*load_textures(t_mlx_data *data)
 	}
 	txts->grass = mlx_xpm_file_to_image(data->mlx, "textures/gs.xpm", &w, &h);
 	txts->rocks = mlx_xpm_file_to_image(data->mlx, "textures/rs.xpm", &w, &h);
-	// txts->exit = mlx_xpm_file_to_image(data->mlx, "textures/ex.xpm", &w, &h);
-	// txts->cols = mlx_xpm_file_to_image(data->mlx, "textures/cl.xpm", &w, &h);
-	// txts->player = mlx_xpm_file_to_image(data->mlx, "textures/pr.xpm", &w, &h);
+	txts->exit = mlx_xpm_file_to_image(data->mlx, "textures/ex.xpm", &w, &h);
+	txts->cols = mlx_xpm_file_to_image(data->mlx, "textures/cl.xpm", &w, &h);
+	txts->player = mlx_xpm_file_to_image(data->mlx, "textures/pl.xpm", &w, &h);
 	return (txts);
 }
