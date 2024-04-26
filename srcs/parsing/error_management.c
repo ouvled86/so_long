@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 01:05:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/25 20:49:45 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:52:28 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ char	*extract_path(char *path)
 
 	map_path = NULL;
 	if (path)
-	{
-		map_path = (char *)malloc(sizeof(path));
 		map_path = path;
-	}
 	return (map_path);
 }
 

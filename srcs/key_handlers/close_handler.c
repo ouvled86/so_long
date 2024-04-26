@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:45:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 23:45:09 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:49:33 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../../includes/libft.h"
 #include "../../mlx/mlx.h"
 
-void	esc_handler(int keycode, t_all_data *all, char *t)
+void	esc_handler(int keycode, t_all_data *all)
 {
 	if (keycode == 53)
 	{
@@ -29,7 +29,7 @@ void	esc_handler(int keycode, t_all_data *all, char *t)
 		mlx_destroy_window(all->data->mlx, all->data->win_ptr);
 		// free (all->data->mlx);
 		free (all->data);
-		free(all);
+		// free(all);
 		exit (0);
 	}
 	// return (0);
