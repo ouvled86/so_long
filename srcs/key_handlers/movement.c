@@ -6,39 +6,23 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 19:53:45 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:08:03 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rendering.h"
 #include "../../mlx/mlx.h"
 
-void	wasd_handler(int keycode, int *x, int *y, char **map)
+void	update_collectibles(int keycode, int *x, int *y, int *c, char **map)
 {
-	if (keycode == 13 && map[*y - 1][*x] != '1' && map[*y - 1][*x] != 'E')
-	{
-		map[*y][*x] = '0';
-		map[*y - 1][*x] = 'P';
-		(*y)--;
-	}
-	else if (keycode == 1 && map[*y + 1][*x] != '1' && map[*y + 1][*x] != 'E')
-	{
-		map[*y][*x] = '0';
-		map[*y + 1][*x] = 'P';
-		(*y)++;
-	}
-	else if (keycode == 2 && map[*y][*x + 1] != '1' && map[*y][*x + 1] != 'E')
-	{
-		map[*y][*x] = '0';
-		map[*y][*x + 1] = 'P';
-		(*x)++;
-	}
-	else if (keycode == 0 && map[*y][*x - 1] != '1' && map[*y][*x - 1] != 'E')
-	{
-		map[*y][*x] = '0';
-		map[*y][*x - 1] = 'P';
-		(*x)--;
-	}
+	if (keycode == 0 && map[*y][*x - 1] == 'C')
+		(*c)--;
+	if (keycode == 2 && map[*y][*x + 1] == 'C')
+		(*c)--;
+	if (keycode == 13 && map[*y - 1][*x] == 'C')
+		(*c)--;
+	if (keycode ==  1 && map[*y + 1][*x] == 'C')
+		(*c)--;
 }
 
 void	moves_print(int keycode, int *x, int *y, int *moves, char **map)
@@ -46,12 +30,14 @@ void	moves_print(int keycode, int *x, int *y, int *moves, char **map)
 	int	f;
 	
 	f = 0;
-	if (keycode == 0 || keycode == 1 || keycode == 2 || keycode == 13)
-	{
-		if (map[*y][*x - 1] != '1' || map[*y][*x + 1] != '1'
-			|| map[*y - 1][*x] != '1' || map[*y - 1][*x] != '1')
-			f = 1;
-	}
+	if (keycode == 0 && map[*y][*x - 1] != '1' && map[*y][*x - 1] != 'E')
+		f = 1;
+	if (keycode == 2 && map[*y][*x + 1] != '1' && map[*y][*x + 1] != 'E')
+		f = 1;
+	if (keycode == 13 && map[*y - 1][*x] != '1' && map[*y - 1][*x] != 'E')
+		f = 1;
+	if (keycode ==  1 && map[*y + 1][*x] != '1' && map[*y + 1][*x] != 'E')
+		f = 1;
 	if (f == 1)
 	{
 		(*moves)++;
@@ -59,13 +45,18 @@ void	moves_print(int keycode, int *x, int *y, int *moves, char **map)
 	}
 }
 
-// int	win_game(int *c, t_pos exit, int *x, int *y)
-// {
-// 	int	f;
-
-// 	f = 0;
-// 	if (*c == 0 )
-// }
+int	win_game(int keycode, int *x, int *y, int *c, char **map)
+{
+	if (keycode == 13 && map[*y - 1][*x] == 'E' && *c == 0)
+		return (1);
+	else if (keycode == 1 && map[*y + 1][*x] == 'E' && *c == 0)
+		return (1);
+	else if (keycode == 2 && map[*y][*x + 1] == 'E' && *c == 0)
+		return (1);
+	else if (keycode == 0 && map[*y][*x - 1] == 'E' && *c == 0)
+		return (1);
+	return (0);
+}
 
 int	movement_handler(int keycode, t_all_data *all)
 {
@@ -77,15 +68,18 @@ int	movement_handler(int keycode, t_all_data *all)
 	map = all->assets->map;
 	x = all->assets->player.x;
 	y = all->assets->player.y;
-	wasd_handler(keycode, &x, &y, map);
 	moves_print(keycode, &x, &y, &moves, map);
+	if (win_game(keycode, &x, &y, &all->assets->collectibles, map))
+	{
+		moves++;
+		printf("You have moved %d times\nCongratulations! You won.\n", moves);
+		exit (0);
+	}
+	if (all->assets->collectibles == 0)
+		wasd_unlocked(keycode, &x, &y, &all->assets->collectibles, map);
+	else
+		wasd_handler(keycode, &x, &y, &all->assets->collectibles, map);
 	all->assets->player.x = x;
 	all->assets->player.y = y;
-	// printf("Keycode number %d has been pressed\n", keycode);
-	// all->assets->map = map;
-	// render_map(all->txts, all->data, all->assets);
-	// for (int j = 0; j < 5; j++)
-	// 	printf("%s", all->assets->map[j]);
-	// printf("\nplayer position: (%d, %d)\nexit position: (%d, %d)\ncollectibles count: %d\n", assets->player.x, assets->player.y, assets->exit.x, assets->exit.y, assets->collectibles);
 	return (0);
 }
