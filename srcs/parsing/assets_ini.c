@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 22:51:11 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:24:35 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ static t_pos	set_p_pos(char **map)
 	t_pos	p_pos;
 
 	i = 0;
-	// if (!p_pos)
-	// 	return (NULL);
 	while (map[i])
 	{
 		j = 0;
@@ -93,8 +91,6 @@ static t_pos	set_e_pos(char **map)
 	t_pos	e_pos;
 
 	i = 0;
-	// if (!e_pos)
-	// 	return (NULL);
 	while (map[i])
 	{
 		j = 0;
@@ -122,8 +118,6 @@ t_assets	*assets_ini(char **map, char *map_path)
 		err_func("Player or exit is not unique", assets, map, map_path);
 	if (set_c_count(map) < 1)
 		err_func("Map does not have any collectibles", assets, map, map_path);
-	// if (!is_accessible(map_path))
-	// 	err_func("Map is invalid", assets, map, map_path);
 	assets->map = map;
 	assets->player = set_p_pos(map);
 	assets->exit = set_e_pos(map);

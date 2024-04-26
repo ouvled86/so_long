@@ -6,15 +6,15 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:51:20 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 18:43:38 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:57:37 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
-#include "../includes/rendering.h"
-#include "../includes/parsing.h"
-#include "../includes/libft.h"
-#include "../mlx/mlx.h"
+#include "../../includes/get_next_line.h"
+#include "../../includes/rendering.h"
+#include "../../includes/parsing.h"
+#include "../../includes/libft.h"
+#include "../../mlx/mlx.h"
 
 t_mlx_data	*ini_data(t_assets *assets, char *map_path)
 {

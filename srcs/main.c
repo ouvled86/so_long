@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:51:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 18:42:52 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:41:34 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 #include "../includes/libft.h"
 #include "../mlx/mlx.h"
 
+void	ch_ls(void)
+{
+	system("leaks a.out");
+}
+
 int	main(int argc, char **argv)
 {
 	char		*map_path;
 	t_all_data	*all;
 
+	atexit(ch_ls);
 	map_path = extract_path(argv[1]);
 	all = (t_all_data *)malloc(sizeof(t_all_data));
 	if (map_path)
@@ -30,6 +36,7 @@ int	main(int argc, char **argv)
 	all->txts = load_textures(all->data);
 	render_map(all);
 	mlx_key_hook(all->data->win_ptr, movement_handler, all);
+	// mlx_key_hook(all->data->win_ptr, esc_handler, all);
 	mlx_loop_hook(all->data->mlx, render_map, all);
 	mlx_loop(all->data->mlx);
 }

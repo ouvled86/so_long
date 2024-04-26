@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 22:55:46 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:38:38 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,14 @@ bool	is_accessible(char *map_path)
 		j = 0;
 		while (cl_a->map[i][j])
 		{
-			if (cl_a->map[i][j] == 'E')
+			if (cl_a->map[i][j++] == 'E')
 				e++;
-			j++;
 		}
 		i++;
 	}
 	if (c != 0 || e != 0)
 		return (false);
+	cl_a->map = freemem(cl_a->map);
+	free (cl_a);
 	return (true);
 }

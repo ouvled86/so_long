@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 22:08:03 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:41:26 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	movement_handler(int keycode, t_all_data *all)
 	x = all->assets->player.x;
 	y = all->assets->player.y;
 	moves_print(keycode, &x, &y, &moves, map);
+	if (keycode == 53)
+		esc_handler(keycode, all);
 	if (win_game(keycode, &x, &y, &all->assets->collectibles, map))
 	{
 		moves++;

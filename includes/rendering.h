@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:05:53 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 22:10:14 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 23:42:01 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void		wasd_handler(int keycode, int *x, int *y, int *c, char **map);
 void		wasd_unlocked(int keycode, int *x, int *y, int *c, char **map);
 void		update_collectibles(int keycode, int *x, int *y, int *c, char **map);
 int			movement_handler(int keycode, t_all_data *all);
-
+void		esc_handler(int keycode, t_all_data *all);
 
 #endif
