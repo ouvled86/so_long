@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/25 22:17:26 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 02:16:47 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,11 @@ static void	render_cols(t_textures *txts, t_mlx_data *data, t_assets *assets)
 	}
 }
 
-void	render_map(t_textures *txts, t_mlx_data *data, t_assets *assets)
+int	render_map(t_all_data *all)
 {
-	render_grass(txts, data, assets);
-	render_rocks(txts, data, assets);
-	render_pl_ex(txts, data, assets);
-	render_cols(txts, data, assets);
+	render_grass(all->txts, all->data, all->assets);
+	render_rocks(all->txts, all->data, all->assets);
+	render_pl_ex(all->txts, all->data, all->assets);
+	render_cols(all->txts, all->data, all->assets);
+	return (0);
 }

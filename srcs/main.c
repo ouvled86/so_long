@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:51:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 00:46:15 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 02:16:55 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int	main(int argc, char **argv)
 		err_func("Map is invalid", all->assets, all->assets->map, map_path);
 	all->data = ini_data(all->assets, map_path);
 	all->txts = load_textures(all->data);
-	render_map(all->txts, all->data, all->assets);
+	render_map(all);
 	mlx_key_hook(all->data->win_ptr, movement_handler, all);
+	mlx_loop_hook(all->data->mlx, render_map, all);
 	mlx_loop(all->data->mlx);
 }
 

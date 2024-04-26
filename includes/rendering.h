@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:05:53 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 00:36:16 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 02:05:21 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ typedef struct s_all_data
 t_mlx_data	*ini_data(t_assets *assets, char *map_path);
 t_textures	*load_textures(t_mlx_data *data);
 
-void		render_map(t_textures *txts, t_mlx_data *data, t_assets *assets);
+int			render_map(t_all_data *all);
 
-int	movement_handler(int keycode, t_all_data *all);
+int			movement_handler(int keycode, t_all_data *all);
 
 
 #endif
