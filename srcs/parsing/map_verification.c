@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:52:59 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 01:55:20 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 00:38:05 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ static bool	is_wrong(char **map)
 bool	is_valid(char **map, char *map_path)
 {
 	if (!is_rectangular(map, map_path))
-		err_func("Map is not rectangular", NULL, map, map_path);
+		err_func("Map is not rectangular", NULL, map);
 	if (!is_enclosed(map, map_path))
-		err_func("Map is not enclosed", NULL, map, map_path);
+		err_func("Map is not enclosed", NULL, map);
 	if (is_wrong(map))
-		err_func("Map keys are wrong", NULL, map, map_path);
+		err_func("Map keys are wrong", NULL, map);
 	return (true);
 }

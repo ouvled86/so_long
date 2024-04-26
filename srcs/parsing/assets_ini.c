@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 23:24:35 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 00:37:06 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,9 @@ t_assets	*assets_ini(char **map, char *map_path)
 	if (!assets)
 		return (NULL);
 	if (!uniq_p_e(map))
-		err_func("Player or exit is not unique", assets, map, map_path);
+		err_func("Player or exit is not unique", assets, map);
 	if (set_c_count(map) < 1)
-		err_func("Map does not have any collectibles", assets, map, map_path);
+		err_func("Map does not have any collectibles", assets, map);
 	assets->map = map;
 	assets->player = set_p_pos(map);
 	assets->exit = set_e_pos(map);
