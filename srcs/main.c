@@ -6,14 +6,14 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:51:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 02:16:55 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:42:52 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/parsing.h"
 #include "../includes/rendering.h"
 #include "../includes/libft.h"
-#include <mlx.h>
+#include "../mlx/mlx.h"
 
 int	main(int argc, char **argv)
 {

@@ -6,12 +6,12 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 02:16:47 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:44:07 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rendering.h"
-#include <mlx.h>
+#include "../../mlx/mlx.h"
 
 static void	render_grass(t_textures	*txts, t_mlx_data *data, t_assets *assets)
 {
