@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:00:32 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:13:38 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	update_collectibles(int keycode, int *x, int *y, int *c, char **map)
 		(*c)--;
 	if (keycode == 13 && map[*y - 1][*x] == 'C')
 		(*c)--;
-	if (keycode ==  1 && map[*y + 1][*x] == 'C')
+	if (keycode == 1 && map[*y + 1][*x] == 'C')
 		(*c)--;
 }
 
 void	moves_print(int keycode, int *x, int *y, int *moves, char **map)
 {
 	int	f;
-	
+
 	f = 0;
 	if (keycode == 0 && map[*y][*x - 1] != '1' && map[*y][*x - 1] != 'E')
 		f = 1;
@@ -36,7 +36,7 @@ void	moves_print(int keycode, int *x, int *y, int *moves, char **map)
 		f = 1;
 	if (keycode == 13 && map[*y - 1][*x] != '1' && map[*y - 1][*x] != 'E')
 		f = 1;
-	if (keycode ==  1 && map[*y + 1][*x] != '1' && map[*y + 1][*x] != 'E')
+	if (keycode == 1 && map[*y + 1][*x] != '1' && map[*y + 1][*x] != 'E')
 		f = 1;
 	if (f == 1)
 	{
@@ -60,10 +60,10 @@ int	win_game(int keycode, int *x, int *y, int *c, char **map)
 
 int	movement_handler(int keycode, t_all_data *all)
 {
-	char	**map;
-	static int		moves;
-	int		x;
-	int		y;
+	char		**map;
+	static int	moves;
+	int			x;
+	int			y;
 
 	map = all->assets->map;
 	x = all->assets->player.x;

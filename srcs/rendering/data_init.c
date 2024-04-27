@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:51:20 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 00:57:18 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:14:16 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_mlx_data	*ini_data(t_assets *assets, char *map_path)
 {
 	t_mlx_data	*data;
-	
+
 	data = (t_mlx_data *)malloc(sizeof(t_mlx_data));
 	data->mlx = mlx_init();
 	data->width = (ft_strlen(assets->map[0]) - 1) * 45;
