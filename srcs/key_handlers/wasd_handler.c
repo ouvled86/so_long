@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:08:26 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 22:08:55 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:00:20 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/rendering.h"
+#include "../../includes/key_handlers.h"
 
 void	wasd_handler(int keycode, int *x, int *y, int *c, char **map)
 {

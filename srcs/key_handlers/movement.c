@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/26 23:41:26 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:00:32 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/rendering.h"
+#include "../../includes/key_handlers.h"
 #include "../../mlx/mlx.h"
 
 void	update_collectibles(int keycode, int *x, int *y, int *c, char **map)
