@@ -6,15 +6,14 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:08:26 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:00:20 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:02:32 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/key_handlers.h"
 
-void	wasd_handler(int keycode, int *x, int *y, int *c, char **map)
+void	wasd_handler(int keycode, int *x, int *y, char **map)
 {
-	update_collectibles(keycode, x, y, c, map);
 	if (keycode == 13 && map[*y - 1][*x] != '1' && map[*y - 1][*x] != 'E')
 	{
 		map[*y][*x] = '0';
@@ -41,9 +40,8 @@ void	wasd_handler(int keycode, int *x, int *y, int *c, char **map)
 	}
 }
 
-void	wasd_unlocked(int keycode, int *x, int *y, int *c, char **map)
+void	wasd_unlocked(int keycode, int *x, int *y, char **map)
 {
-	update_collectibles(keycode, x, y, c, map);
 	if (keycode == 13 && map[*y - 1][*x] != '1')
 	{
 		map[*y][*x] = '0';

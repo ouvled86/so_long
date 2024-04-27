@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:11:28 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/22 01:14:07 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:04:10 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,5 @@ int		ft_putuint(unsigned int n);
 char	*base(int c);
 int		reccursive(int n, int count, int tmp);
 char	**freemem(char **res);
-
 
 #endif

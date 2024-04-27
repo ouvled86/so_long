@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:09:25 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:45:23 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,15 +93,14 @@ void	flood_fill(char **map, t_pos size, int x, int y)
 bool	is_accessible(char *map_path)
 {
 	t_assets	*cl_a;
+	static int	e;
 	int			c;
-	int			e;
 	int			i;
 	int			j;
 
 	cl_a = assets_ini(read_map(map_path), map_path);
 	flood_fill(cl_a->map, cl_a->size, cl_a->player.x, cl_a->player.y);
 	c = set_c_count(cl_a->map);
-	e = 0;
 	i = 0;
 	while (cl_a->map[i])
 	{
