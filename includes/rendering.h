@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:05:53 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 00:58:57 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:21:34 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 typedef struct s_mlx_data
 {
 	void	*mlx;
-	void	*win_ptr;
+	void	*win;
 	int		width;
 	int		height;
 }			t_mlx_data;
 
 typedef struct s_textures
 {
-	void	*grass;
-	void	*rocks;
-	void	*exit;
-	void	*cols;
-	void	*player;
+	void	*g;
+	void	*r;
+	void	*e;
+	void	*c;
+	void	*p;
 }			t_textures;
 
 typedef struct s_all_data

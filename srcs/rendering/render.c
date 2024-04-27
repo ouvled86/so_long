@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:14:10 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:21:34 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	render_grass(t_textures	*txts, t_mlx_data *data, t_assets *assets)
 		x = 0;
 		while (x < data->width - 45)
 		{
-			mlx_put_image_to_window(data->mlx, data->win_ptr, txts->grass, x, y);
+			mlx_put_image_to_window(data->mlx, data->win, txts->g, x, y);
 			x += 45;
 		}
 		y += 45;
@@ -43,7 +43,7 @@ static void	render_rocks(t_textures *txts, t_mlx_data *data, t_assets *assets)
 		while (x <= data->width - 45)
 		{
 			if (assets->map[y / 45][x / 45] == '1')
-				mlx_put_image_to_window(data->mlx, data->win_ptr, txts->rocks, x, y);
+				mlx_put_image_to_window(data->mlx, data->win, txts->r, x, y);
 			x += 45;
 		}
 		y += 45;
@@ -62,9 +62,9 @@ static void	render_pl_ex(t_textures *txts, t_mlx_data *data, t_assets *assets)
 		while (x <= data->width - 45)
 		{
 			if (assets->map[y / 45][x / 45] == 'P')
-				mlx_put_image_to_window(data->mlx, data->win_ptr, txts->player, x, y);
+				mlx_put_image_to_window(data->mlx, data->win, txts->p, x, y);
 			if (assets->map[y / 45][x / 45] == 'E')
-				mlx_put_image_to_window(data->mlx, data->win_ptr, txts->exit, x, y);
+				mlx_put_image_to_window(data->mlx, data->win, txts->e, x, y);
 			x += 45;
 		}
 		y += 45;
@@ -83,7 +83,7 @@ static void	render_cols(t_textures *txts, t_mlx_data *data, t_assets *assets)
 		while (x <= data->width - 45)
 		{
 			if (assets->map[y / 45][x / 45] == 'C')
-				mlx_put_image_to_window(data->mlx, data->win_ptr, txts->cols, x, y);
+				mlx_put_image_to_window(data->mlx, data->win, txts->c, x, y);
 			x += 45;
 		}
 		y += 45;
