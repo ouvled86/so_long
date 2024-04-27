@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 00:37:22 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:09:25 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**read_map(char *map_path)
 	int		i;
 
 	if (file_check(map_path) == false)
-		return (NULL);
+		err_func("Please enter a valid map", NULL, NULL);
 	lines = lines_count(map_path);
 	fd = open(map_path, O_RDONLY);
 	map = (char **)malloc(lines * sizeof(char *));
