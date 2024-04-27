@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:36:50 by ouel-bou          #+#    #+#             */
-/*   Updated: 2023/11/13 22:52:37 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:45:40 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

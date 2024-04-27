@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:35:10 by ouel-bou          #+#    #+#             */
-/*   Updated: 2023/11/16 02:56:53 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:47:53 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static void	skip_spaces(const char *str, int *i, int *sign)
 {

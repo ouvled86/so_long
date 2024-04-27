@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 19:01:24 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 19:44:35 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	moves_print(int keycode, int *x, int *y, char **map)
 	if (f == 1)
 	{
 		moves++;
-		printf("You have moved %d times\n", moves);
+		ft_printf("You have moved %d times\n", moves);
 	}
 }
 
@@ -78,7 +78,7 @@ int	movement_handler(int keycode, t_all_data *all)
 		esc_handler(keycode, all);
 	if (win_game(&x, &y, update_collectibles(&x, &y, map), map))
 	{
-		printf("Congratulations! You won.\n");
+		ft_printf("Congratulations! You won.\n");
 		exit (0);
 	}
 	update_collectibles(&x, &y, map);

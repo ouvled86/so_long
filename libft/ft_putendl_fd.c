@@ -6,11 +6,11 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:31:09 by ouel-bou          #+#    #+#             */
-/*   Updated: 2023/11/14 05:55:10 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:45:40 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
