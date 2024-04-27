@@ -6,14 +6,14 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:48:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:21:34 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:32:31 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rendering.h"
 #include "../../mlx/mlx.h"
 
-static void	render_grass(t_textures	*txts, t_mlx_data *data, t_assets *assets)
+static void	render_grass(t_textures	*txts, t_mlx_data *data)
 {
 	int	x;
 	int	y;
@@ -92,7 +92,7 @@ static void	render_cols(t_textures *txts, t_mlx_data *data, t_assets *assets)
 
 int	render_map(t_all_data *all)
 {
-	render_grass(all->txts, all->data, all->assets);
+	render_grass(all->txts, all->data);
 	render_rocks(all->txts, all->data, all->assets);
 	render_pl_ex(all->txts, all->data, all->assets);
 	render_cols(all->txts, all->data, all->assets);
