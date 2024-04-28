@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 21:41:57 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/21 18:48:22 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:16:07 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 43
 # endif
 
 size_t	ft_sl(char *s);

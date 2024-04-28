@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:52:59 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 00:38:05 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:52:49 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static char	*set_wall(int length)
 
 	i = 0;
 	wall = (char *)malloc(length);
-	while (i < length)
+	while (i < length - 1)
 	{
 		wall[i] = '1';
 		i++;
 	}
-	wall[i] = '\n';
+	wall[i] = '\0';
 	wall[i + 1] = '\0';
 	return (wall);
 }
@@ -33,14 +33,18 @@ static bool	is_rectangular(char **map, char *map_path)
 {
 	int	i;
 	int	j;
+	int	len;
 	int	lines;
 
 	j = 0;
 	lines = lines_count(map_path);
+	len = ft_strlen(map[lines - 1]);
 	while (map[j] && j < lines - 1)
 	{
-		i = ft_strlen(map[j]);
-		if (i != ft_strlen(map[lines - 1]) + 1)
+		i = 0;
+		while (map[j][i] != '\n')
+			i++;
+		if (i != len)
 			return (false);
 		j++;
 	}
@@ -96,10 +100,10 @@ static bool	is_wrong(char **map)
 bool	is_valid(char **map, char *map_path)
 {
 	if (!is_rectangular(map, map_path))
-		err_func("Map is not rectangular", NULL, map);
+		err_func("Map is not rectangular", NULL, NULL);
 	if (!is_enclosed(map, map_path))
-		err_func("Map is not enclosed", NULL, map);
+		err_func("Map is not enclosed", NULL, NULL);
 	if (is_wrong(map))
-		err_func("Map keys are wrong", NULL, map);
+		err_func("Map keys are wrong", NULL, NULL);
 	return (true);
 }

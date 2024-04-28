@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 18:45:23 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/04/28 01:53:14 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	**read_map(char *map_path)
 		err_func("Please enter a valid map", NULL, NULL);
 	lines = lines_count(map_path);
 	fd = open(map_path, O_RDONLY);
-	map = (char **)malloc(lines * sizeof(char *));
+	map = (char **)malloc((lines + 1) * sizeof(char *));
 	if (!map)
 		return (NULL);
 	i = 0;
@@ -68,8 +68,10 @@ char	**read_map(char *map_path)
 			err_func("Memory issue", NULL, map);
 		i++;
 	}
-	map[lines] = NULL;
+	map[22] = NULL;
 	close (fd);
+	if (!map || !map[0])
+		err_func("Please enter a valid map", NULL, NULL);
 	return (map);
 }
 

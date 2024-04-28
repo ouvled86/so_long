@@ -35,7 +35,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(GNL_OBJS) $(LIBFT)
 	@echo "Compiling so_long sources..."
-	@cc $(CFLAGS) -Lmlx -lmlx -framework AppKit -framework OpenGL $(OBJS) $(GNL_OBJS) $(LIBFT) -o $(NAME)
+	@cc -g $(CFLAGS) -Lmlx -lmlx -framework AppKit -framework OpenGL $(OBJS) $(GNL_OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	@echo "Archiving libftprintf..."
@@ -43,7 +43,7 @@ $(LIBFT):
 	@make clean -s -C libft
 
 %.o: %.c $(SRCS) $(GNL) $(HEADERS) $(GNL_HEADER)
-	@cc $(CFLAGS) -c $< -o $@ 
+	@cc -g $(CFLAGS) -c $< -o $@ 
 
 clean:
 	@echo "Cleaning object files..."
