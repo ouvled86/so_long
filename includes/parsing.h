@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:43:12 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 00:37:50 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:53:39 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_assets
 	int		collectibles;
 	t_pos	player;
 	t_pos	size;
-	t_pos	exit;
 }			t_assets;
 
 char		**read_map(char *map_path);

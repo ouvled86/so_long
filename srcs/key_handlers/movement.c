@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:38:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 19:44:35 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:53:14 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	movement_handler(int keycode, t_all_data *all)
 		ft_printf("Congratulations! You won.\n");
 		exit (0);
 	}
-	update_collectibles(&x, &y, map);
 	if (all->assets->collectibles == 0)
 		wasd_unlocked(keycode, &x, &y, map);
 	else
@@ -90,3 +89,6 @@ int	movement_handler(int keycode, t_all_data *all)
 	all->assets->player.y = y;
 	return (0);
 }
+
+// Replace update_collectibles in win_game with assets->collectibles
+// Manipulate assets->collectibles instead of using static variable

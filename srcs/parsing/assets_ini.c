@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/28 01:53:39 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/01 16:49:22 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,28 +84,6 @@ static t_pos	set_p_pos(char **map)
 	return (p_pos);
 }
 
-static t_pos	set_e_pos(char **map)
-{
-	int		i;
-	int		j;
-	t_pos	e_pos;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j] && map[i][j] != 'E')
-			j++;
-		if (map[i][j] == 'E')
-		{
-			e_pos.x = j;
-			e_pos.y = i;
-		}
-		i++;
-	}
-	return (e_pos);
-}
-
 t_assets	*assets_ini(char **map, char *map_path)
 {
 	t_assets	*assets;
@@ -120,7 +98,6 @@ t_assets	*assets_ini(char **map, char *map_path)
 		err_func("Map does not have any collectibles", assets, map);
 	assets->map = map;
 	assets->player = set_p_pos(map);
-	assets->exit = set_e_pos(map);
 	assets->size.x = ft_strlen(map[0]) - 1;
 	assets->size.y = lines_count(map_path);
 	assets->collectibles = set_c_count(map);
