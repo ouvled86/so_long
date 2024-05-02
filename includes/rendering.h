@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:05:53 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 01:21:34 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:48:57 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_all_data
 	t_assets	*assets;
 }				t_all_data;
 
-t_mlx_data	*ini_data(t_assets *assets, char *map_path);
+t_mlx_data	*data_init(t_assets *assets, char *map_path);
 t_textures	*load_textures(t_mlx_data *data);
 
 int			render_map(t_all_data *all);

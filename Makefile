@@ -4,7 +4,7 @@ SRCS =	srcs/key_handlers/movement.c \
 		srcs/key_handlers/wasd_handler.c \
 		srcs/key_handlers/close_handler.c \
 		srcs/parsing/map_parse.c	\
-		srcs/parsing/assets_ini.c	\
+		srcs/parsing/assets_init.c	\
 		srcs/parsing/error_management.c	\
 		srcs/parsing/map_verification.c	\
 		srcs/rendering/render.c \
@@ -42,7 +42,7 @@ $(LIBFT):
 	@make re -s -C libft
 	@make clean -s -C libft
 
-%.o: %.c $(SRCS) $(GNL) $(HEADERS) $(GNL_HEADER)
+%.o: %.c $(HEADERS) $(GNL_HEADER) $(LIBFT_HEADER)
 	@cc -g $(CFLAGS) -c $< -o $@ 
 
 clean:

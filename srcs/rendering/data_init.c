@@ -6,14 +6,14 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:51:20 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/27 21:38:26 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:48:57 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/rendering.h"
 #include "../../mlx/mlx.h"
 
-t_mlx_data	*ini_data(t_assets *assets, char *map_path)
+t_mlx_data	*data_init(t_assets *assets, char *map_path)
 {
 	t_mlx_data	*data;
 

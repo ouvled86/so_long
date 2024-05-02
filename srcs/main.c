@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:51:36 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/28 01:53:58 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 13:51:17 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	main(int argc, char **argv)
 		map_path = extract_path(argv[1]);
 		all = (t_all_data *)malloc(sizeof(t_all_data));
 		if (map_path)
-			all->assets = assets_ini(read_map(map_path), map_path);
+			all->assets = assets_init(read_map(map_path), map_path);
 		if (!is_accessible(map_path))
 			err_func("Map is invalid", all->assets, all->assets->map);
-		all->data = ini_data(all->assets, map_path);
+		all->data = data_init(all->assets, map_path);
 		all->txts = load_textures(all->data);
 		render_map(all);
 		mlx_key_hook(all->data->win, movement_handler, all);

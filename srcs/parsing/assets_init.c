@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assets_ini.c                                       :+:      :+:    :+:   */
+/*   assets_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:25:24 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/05/01 16:49:22 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:48:31 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static t_pos	set_p_pos(char **map)
 	return (p_pos);
 }
 
-t_assets	*assets_ini(char **map, char *map_path)
+t_assets	*assets_init(char **map, char *map_path)
 {
 	t_assets	*assets;
 

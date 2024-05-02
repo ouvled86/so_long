@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:56:42 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/04/28 02:20:38 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:48:31 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ bool	is_accessible(char *map_path)
 	int			i;
 	int			j;
 
-	cl_a = assets_ini(read_map(map_path), map_path);
+	cl_a = assets_init(read_map(map_path), map_path);
 	flood_fill(cl_a->map, cl_a->size, cl_a->player.x, cl_a->player.y);
 	c = set_c_count(cl_a->map);
 	i = 0;
