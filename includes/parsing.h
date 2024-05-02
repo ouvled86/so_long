@@ -6,7 +6,7 @@
 /*   By: ouel-bou <ouel-bou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 18:43:12 by ouel-bou          #+#    #+#             */
-/*   Updated: 2024/05/01 16:53:39 by ouel-bou         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:36:20 by ouel-bou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdbool.h>
 # include "libft.h"
 # include "get_next_line.h"
